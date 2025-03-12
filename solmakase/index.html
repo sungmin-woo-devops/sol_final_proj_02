@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy">
+    <meta http-equiv="X-Content-Security-Policy">
+    <title>Solution Omakase</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm/css/xterm.css">
+    <script src="https://cdn.jsdelivr.net/npm/xterm/lib/xterm.js"></script>
+</head>
+<body class="bg-gray-100 p-6">
+    <div class="max-w-4xl mx-auto bg-white shadow-md rounded-lg p-6">
+        <!-- Header -->
+        <div class="flex justify-between items-center mb-4">
+            <h1 class="text-2xl font-bold">Solution Omakase</h1>
+            <button class="bg-black text-white px-4 py-2 rounded">New Project</button>
+        </div>
+
+        <!-- Service Configuration -->
+        <div class="mb-6">
+            <h2 class="text-lg font-semibold mb-2">Enter Name</h2>
+            <div class="flex space-x-2">
+                <input type="text" placeholder="Enter name" class="flex-1 border p-2 rounded">
+                <button class="bg-black text-white px-4 py-2 rounded">Generate</button>
+            </div>
+        </div>
+
+        <!-- Hosting -->
+        <div class="mb-6">
+            <h2 class="text-lg font-semibold mb-2">Hosting</h2>
+            <div class="grid grid-cols-4 gap-4">
+              <button class="border p-4 rounded text-center flex flex-col items-center">
+                <img src="https://cdn-icons-png.flaticon.com/128/4323/4323009.png" class="h-6 w-6 mb-1" alt="VM">
+                <b>Virtual Machine</b>
+              </button>
+              <button class="border p-4 rounded text-center flex flex-col items-center">
+                <img src="https://cdn-icons-png.flaticon.com/128/919/919853.png" class="h-6 w-6 mb-1" alt="Container">
+                <b>Container</b>
+              </button>
+              <button class="border p-4 rounded text-center flex flex-col items-center">
+                <span class="iconify" data-icon="logos:kubernetes" data-width="30" data-height="30" style="color: #326CE5;"></span>
+                <b>Kubernetes</b>
+              </button>
+              <button class="border p-4 rounded text-center flex flex-col items-center">
+                <img src="https://cdn-icons-png.flaticon.com/128/5645/5645814.png" class="h-6 w-6 mb-1" alt="Serverless">
+                <b>Serverless</b>
+              </button>
+            </div>
+        </div>
+
+        <!-- Essential Infrastructure -->
+        <div class="mb-6">
+            <h2 class="text-lg font-semibold mb-2">Menu</h2>
+            <div class="grid grid-cols-3 gap-4">
+              <button class="border p-4 rounded text-center flex flex-col items-center">
+                  <img src="https://cdn-icons-png.flaticon.com/128/1828/1828884.png" class="h-6 w-6 mb-1" alt="Standard">
+                  <b>Standard</b>
+                  <p class="text-xs text-gray-500">LB, Web, NAS</p>
+              </button>
+              <button class="border p-4 rounded text-center flex flex-col items-center">
+                  <img src="https://cdn-icons-png.flaticon.com/128/2985/2985150.png" class="h-6 w-6 mb-1" alt="DB">
+                  <b>DB</b>
+                  <p class="text-xs text-gray-500">LB, Web, DB, NAS</p>
+              </button>
+              <button class="border p-4 rounded text-center flex flex-col items-center">
+                  <img src="https://cdn-icons-png.flaticon.com/128/2965/2965335.png" class="h-6 w-6 mb-1" alt="Storage">
+                  <b>Storage</b>
+                  <p class="text-xs text-gray-500">LB, Web, NAS, Storage</p>
+              </button>
+              <button class="border p-4 rounded text-center flex flex-col items-center">
+                  <img src="https://cdn-icons-png.flaticon.com/128/3067/3067795.png" class="h-6 w-6 mb-1" alt="File Storage">
+                  <b>File Storage</b>
+                  <p class="text-xs text-gray-500">LB, Web, NAS, NFS</p>
+              </button>
+              <button class="border p-4 rounded text-center flex flex-col items-center">
+                  <img src="https://cdn-icons-png.flaticon.com/128/3589/3589366.png" class="h-6 w-6 mb-1" alt="Block Storage">
+                  <b>Block Storage</b>
+                  <p class="text-xs text-gray-500">LB, Web, NAS, iSCSI</p>
+              </button>
+              <button class="border p-4 rounded text-center flex flex-col items-center">
+                  <img src="https://cdn-icons-png.flaticon.com/128/1792/1792693.png" class="h-6 w-6 mb-1" alt="Object Storage">
+                  <b>Object Storage</b>
+                  <p class="text-xs text-gray-500">LB, Web, NAS, Minio</p>
+              </button>
+            </div>
+        </div>
+
+        <!-- Advanced Functions -->
+        <div class="mb-6">
+            <h2 class="text-lg font-semibold mb-2">Advanced Functions</h2>
+            <div class="grid grid-cols-3 gap-4">
+                <button class="border p-4 rounded text-center flex flex-col items-center">
+                  <img src="https://cdn-icons-png.flaticon.com/128/609/609803.png" class="h-6 w-6 mb-1" alt="Backup">
+                  <b>Backup</b>
+                  <p class="text-xs text-gray-500">NAS 1pc + Backup w/ rsync</p>
+              </button>
+              <button class="border p-4 rounded text-center flex flex-col items-center">
+                  <img src="https://cdn-icons-png.flaticon.com/128/1042/1042216.png" class="h-6 w-6 mb-1" alt="Monitoring">
+                  <b>Monitoring</b>
+                  <p class="text-xs text-gray-500">rsyslog + ELK Stack w/ Compose</p>
+              </button>
+              <button class="border p-4 rounded text-center flex flex-col items-center">
+                  <img src="https://cdn-icons-png.flaticon.com/128/616/616817.png" class="h-6 w-6 mb-1" alt="DR">
+                  <b>DR</b>
+                  <p class="text-xs text-gray-500">keepalived</p>
+              </button>
+            </div>
+        </div>
+
+        <!-- Next Button -->
+        <div class="text-right">
+            <button class="bg-black text-white px-6 py-2 rounded">Next</button>
+        </div>
+
+        <!-- 터미널 출력 영역 -->
+        <div class="mt-6 p-4 bg-black rounded-lg shadow-md">
+          <h2 class="text-white text-lg font-semibold mb-2">Execution Logs</h2>
+          <div id="terminal-container" class="h-60 overflow-hidden"></div>
+        </div>
+
+        <script>
+        // Xterm.js 설정
+        const term = new Terminal({
+            cursorBlink: true,
+            theme: {
+                background: 'black',
+                foreground: 'white'
+            }
+        });
+
+        // 터미널을 특정 컨테이너에 연결
+        term.open(document.getElementById('terminal-container'));
+
+        // WebSocket 연결
+        const socket = new WebSocket("ws://localhost:5000/ws");
+
+        socket.onmessage = (event) => {
+          term.write(event.data + "\r\n");
+        }
+
+        socket.onclose = () => {
+            term.write("\r\n[Disconnected]\r\n");
+        };
+
+        // 버튼 클릭 이벤트 추가 (버튼 이름 콘솔 출력 + 명령 실행)
+        document.querySelectorAll("button").forEach(button => {
+            button.addEventListener("click", function () {
+                let buttonText = this.innerText.trim();
+                console.log(`버튼 클릭: ${buttonText}`);
+
+                // 서버에 명령어 전달 (executeCommand 호출)
+                executeCommand(`echo ${buttonText}`);
+            });
+        });
+
+        // 버튼 클릭 시 서버에 명령 실행 요청
+        function executeCommand(command) {
+            console.log(`executeCommand: ${command}`);
+
+            fetch('http://127.0.0.1:5000/execute', {  // ✅ URL 수정: /exec → /execute
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ command })  // ✅ JSON 데이터 올바르게 보냄
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(`✅ 서버 응답: ${JSON.stringify(data)}`);
+                term.write(`\r\n$ ${data.command}\r\n`);
+            })
+            .catch(error => console.error('❌ Error:', error));
+        }
+        </script>
+    </div>
+</body>
+</html>
