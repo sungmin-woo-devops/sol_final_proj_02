@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ansible 실시간 로그</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm/css/xterm.css">
+    <script src="https://cdn.jsdelivr.net/npm/xterm/lib/xterm.js"></script>
+</head>
+<body style="background-color: black; color: white;">
+    <h2 style="text-align: center;">Ansible 실시간 실행 로그</h2>
+    <div id="terminal-container" style="width: 80%; height: 400px; margin: auto;"></div>
+
+    <script>
+        const term = new Terminal({
+            cursorBlink: true,
+            theme: {
+                background: 'black',
+                foreground: 'white'
+            }
+        });
+
+        term.open(document.getElementById('terminal-container'));
+
+        const socket = new WebSocket("ws://localhost:5000/ws");
+
+        socket.onmessage = (event) => {
+            term.write(event.data + "\r\n");
+        };
+
+        socket.onclose = () => {
+            term.write("\r\n연결이 종료되었습니다.\r\n");
+        };
+    </script>
+</body>
+</html>
